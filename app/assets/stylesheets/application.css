@@ -64,11 +64,13 @@ p {
     letter-spacing: -1px;
     padding-top: 9px;
     font-weight: bold;
+    border: 5px;
 }
 
 #logo:hover {
     color: white;
     text-decoration: none;
+    border: 5px;
 }
 
 /* footer */
