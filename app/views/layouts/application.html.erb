@@ -12,11 +12,19 @@
   <%= render 'layouts/shim' %>
 </head>
 <body>
-<%= render 'layouts/header' %>
+<%= render "layouts/header" %>
 <div class="container">
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
+
   <%= yield %>
-  <%= render 'layouts/footer' %>
+
+  <%= render "layouts/footer" %>
+
+  <%= debug(params) if Rails.env.development? %>
 </div>
+
 <!-- Bootstrap JavaScript CDN -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
